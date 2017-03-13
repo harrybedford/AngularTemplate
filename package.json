@@ -1,0 +1,44 @@
+{
+  "name": "templateapp",
+  "version": "1.0.0",
+  "description": "template angular app",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "npm-run-all --parallel serve watch:css watch:js",
+    "stylus": "stylus --compress ./style/stylus/main.styl -o ./style/style.css",
+    "build": "browserify app/index.js | uglifyjs -mc warnings=false > app/bundle.js",
+    "lint": "jshint app/.",
+    "serve": "live-server --watch=style/css,app/bundle.js --wait=10",
+    "watch:css": "onchange \"./style/stylus/*.styl\" -- npm run stylus",
+    "watch:js": "watchify app/index.js -o app/bundle.js -v"
+  },
+  "dependencies": {
+    "angular": "^1.6.2",
+    "browserify-shim": "^3.4.1",
+    "kouto-swiss": "^1.1.0",
+    "lodash": "4.17.x",
+    "moment": "2.9.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.5.5",
+    "archiver": "^1.1.x",
+    "browserify-ng-html2js": "latest",
+    "graceful-fs": "^4.1.x",
+    "parse-filepath": "^1.0.x",
+    "jasmine-core": "^2.4.1",
+    "jshint": "^2.9.3",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-coverage": "^0.5.5",
+    "karma-jasmine": "^0.3.8",
+    "karma-junit-reporter": "1.1.0",
+    "karma-phantomjs-launcher": "^1.0.1",
+    "npm-run-all": "^3.1.0",
+    "onchange": "^3.0.2",
+    "uglifyjs": "^2.4.10",
+    "watchify": "latest",
+    "envify": "latest"
+  },
+  "author": "Harry Bedford",
+  "license": "ISC"
+}
