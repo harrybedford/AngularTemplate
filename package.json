@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "angular": "^1.6.2",
+    "angular-ui-router": "^0.4.2",
     "browserify-shim": "^3.4.1",
     "kouto-swiss": "^1.1.0",
     "lodash": "4.17.x",
@@ -39,6 +40,36 @@
     "watchify": "latest",
     "envify": "latest"
   },
+  "browserify": {
+    "transform": [
+      "browserify-shim",
+      "envify",
+      "browserify-ng-html2js"
+    ]
+  },
+  "browserify-shim": {
+    "angular": "angular",
+    "angular-animate": {
+      "depends": [
+        "angular"
+        ]
+      }
+    },
+    "angular-resource": {
+      "depends": [
+        "angular"
+      ]
+    },
+    "angular-ui-router": {
+      "depends": [
+        "angular"
+      ]
+    },
+    "angular-sanitize": {
+      "depends": [
+        "angular"
+      ]
+    },
   "author": "Harry Bedford",
   "license": "ISC"
 }

@@ -1,14 +1,16 @@
 'use strict';
 
-module.exports = function($stateProvider, $urlRouterProvider) {
+module.exports = ['$stateProvider', '$urlRouterProvider', 
+	function($stateProvider, $urlRouterProvider) {
     
-    $urlRouterProvider.otherwise('/');
-    
-    $stateProvide
-        .state('home', {
-            url: '/',
-            templateUrl: './home/template.html',
-            controller: 'HomeController as vm'
-        });
-        
-};
+	    $urlRouterProvider.otherwise('/');
+	    
+	    $stateProvider
+	        .state('home', {
+	            url: '/',
+	            templateUrl: 'home.template.html',
+	            controller: 'HomeController as vm'
+	        });
+	        
+	}
+];
